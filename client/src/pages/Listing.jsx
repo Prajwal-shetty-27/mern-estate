@@ -9,14 +9,11 @@ import {
   FaBath,
   FaBed,
   FaChair,
-  FaMapMarkedAlt,
   FaMapMarkerAlt,
   FaParking,
   FaShare,
 } from 'react-icons/fa';
 import Contact from '../components/Contact';
-
-// https://sabe.io/blog/javascript-format-numbers-commas#:~:text=The%20best%20way%20to%20format,format%20the%20number%20with%20commas.
 
 export default function Listing() {
   SwiperCore.use([Navigation]);
@@ -59,17 +56,34 @@ export default function Listing() {
       {listing && !loading && !error && (
         <div>
           <Swiper navigation>
-            {listing.imageUrls.map((url) => (
-              <SwiperSlide key={url}>
-                <div
-                  className='h-[550px]'
-                  style={{
-                    background: `url(${url}) center no-repeat`,
-                    backgroundSize: 'cover',
-                  }}
-                ></div>
-              </SwiperSlide>
-            ))}
+            {/* Static Image Sliders */}
+            <SwiperSlide key="home1">
+              <div
+                className='h-[550px]'
+                style={{
+                  background: `url(/home1.jpg) center no-repeat`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
+            </SwiperSlide>
+            <SwiperSlide key="home2">
+              <div
+                className='h-[550px]'
+                style={{
+                  background: `url(/home2.jpg) center no-repeat`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
+            </SwiperSlide>
+            <SwiperSlide key="home3">
+              <div
+                className='h-[550px]'
+                style={{
+                  background: `url(/home3.jpg) center no-repeat`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
+            </SwiperSlide>
           </Swiper>
           <div className='fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
             <FaShare
